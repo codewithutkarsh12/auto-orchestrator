@@ -1,0 +1,31 @@
+name: OSS contributor MVP
+
+on:
+  push:
+    branches:
+      - main
+      - feat/oss-contributor-discovery-mvp
+    paths:
+      - "oss_contributor/**"
+      - ".github/workflows/oss-contributor.yml"
+  pull_request:
+    paths:
+      - "oss_contributor/**"
+      - ".github/workflows/oss-contributor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run discovery MVP tests
+        run: python -m unittest discover -s oss_contributor/tests -v
