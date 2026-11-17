@@ -68,6 +68,16 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Main flow:
 
 AUTO includes an optional Claude Code remote MCP configuration for GitDiagram. It can help map the architecture of **public** GitHub repositories. See [GITDIAGRAM_MCP.md](GITDIAGRAM_MCP.md) for setup, tool routing, and safety rules. The repository-root [.mcp.json](.mcp.json) registers the hosted service for compatible Claude Code sessions. This does not add a live MCP client to AUTO's Python runtime; that requires a separately implemented and tested adapter.
 
+## Install GitDiagram in the global /auto workflow
+
+To append the GitDiagram routing rules to the existing global workflow on Windows, run the included installer from a local clone after checking out this feature branch:
+
+```powershell
+.\install_gitdiagram_workflow.ps1
+```
+
+The installer checks that the target workflow exists, skips duplicate installation, creates a timestamped backup, appends the fragment, and verifies the result. It does not overwrite the existing workflow. The default target is `$HOME\.gemini\config\global_workflows\auto.md`; pass `-WorkflowPath` to use another exact path.
+
 ## Safety model
 
 - Skills are untrusted extensions; metadata is not proof of safety.
