@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "id": "dailyflutterui-payhip",
     "name": "DailyFlutterUI",
@@ -10,7 +10,57 @@
     "license_status": "not_verified",
     "screenshot_status": "blocked_by_current_image_fetch",
     "visual_analysis_status": "pending",
-    "notes": "Listing metadata collected. Do not assume product quality, source-code safety, or reuse rights from seller descriptions."
+    "notes": "Listing metadata collected. Do not assume product quality, source-code safety, or reuse rights from seller descriptions.",
+    "browser_inspection": {
+      "inspected_at": "2026-11-17",
+      "browser_tab_title": "DailyFlutterUI - Payhip",
+      "browser_tab_url": "https://payhip.com/DailyFlutterUI",
+      "observed_listing_count": 16,
+      "observed_preview_img_elements": 32,
+      "preview_image_src_values_are_relative_page_tokens": true,
+      "screenshot_capture": "not_performed",
+      "screenshot_capture_reason": "Connected Chat-mode browser exposes extracted page text/markup but no screenshot or browser-control action in this session.",
+      "page_level_observations": [
+        "Shop storefront with search, cart, login, contact navigation",
+        "16 product cards; two image elements observed per product card",
+        "Seller portfolio section titled Apps I've Built for client",
+        "Three external App Store links shown in portfolio section",
+        "About Me section claims four years of Flutter development experience",
+        "Newsletter signup and Instagram/TikTok links are present"
+      ],
+      "caveats": [
+        "Image src tokens were exposed by page extraction but their pixels were not retrieved or visually inspected.",
+        "The public portfolio page indexed at https://dailyflutterui-2001.github.io/my-portfolio/ appears related by brand/handle, but exact ownership linkage to every Payhip listing is not independently confirmed.",
+        "Do not infer product quality, exact screen count, source-code safety, or licence permissions from listing cards."
+      ]
+    },
+    "secondary_public_portfolio": {
+      "url": "https://dailyflutterui-2001.github.io/my-portfolio/",
+      "relationship_status": "likely_related_brand_handle_not_fully_verified",
+      "evidence": "Search-indexed page uses DailyFlutterUI branding, same Instagram handle family, and describes Flutter UI templates.",
+      "claims_not_independently_verified": [
+        "Portfolio says developer has 6+ years experience",
+        "Portfolio says templates are offered for $12",
+        "Portfolio says end-to-end Flutter development and UI/UX-to-Flutter services"
+      ],
+      "visible_screen_labels": {
+        "Airbnb Booking App UI": 20,
+        "Pizza App UI": 16,
+        "Parcel Delivery App UI": 16,
+        "Food Delivery App UI": 16,
+        "Fashion App UI": 16,
+        "Fintech App UI": 20
+      },
+      "plus_markers_observed": {
+        "Airbnb Booking App UI": "+16",
+        "Pizza App UI": "+12",
+        "Parcel Delivery App UI": "+12",
+        "Food Delivery App UI": "+12",
+        "Fashion App UI": "+12",
+        "Fintech App UI": "+16"
+      },
+      "note": "These are image labels exposed by search indexing, not pixel-level screenshot analysis. The meaning of the additional-screen markers is not confirmed."
+    }
   },
   "products": [
     {
@@ -23,7 +73,23 @@
       "analysis_status": "detail_text_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k6qgnrq312hb1o2eqph1925mjo1m.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k6qgmbha14l8ai61nhm1ff214f91g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "ride-hailing",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "18.88",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "food-delivery-app-ui",
@@ -35,7 +101,23 @@
       "analysis_status": "detail_text_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5ougc7n1e486bdrpa1eil1ml31g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5ov1onfsqk46e1967pjm1c7e2d.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "food-delivery",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "flight-booking-app-ui",
@@ -47,7 +129,23 @@
       "analysis_status": "detail_text_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5u2r7irb3pkao1ltudju33a1a.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5ubaq38tss10cpe1u3s1ilk1m.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "flight-booking",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "airbnb-clone-app-ui",
@@ -59,7 +157,23 @@
       "analysis_status": "detail_text_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5r3ragn2d77pb2nlh0od1o1a.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5r3uc9vn5bt59bdtn0lghs1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "vacation-rental",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "fintech-app-ui-1",
@@ -71,7 +185,23 @@
       "analysis_status": "detail_text_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5p1u3c9tft1bvk1t8q1los1rlt1a.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5p21ffh1i0s1rhiih5lp4knt1l.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "fintech",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "parcel-delivery-app-ui",
@@ -83,7 +213,23 @@
       "analysis_status": "detail_text_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5ploutc8l7s4r10mu8021pnk1m.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5plo0f11ero80811na19o7ntf1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "parcel-delivery",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "ev-charging-app-ui",
@@ -95,7 +241,23 @@
       "analysis_status": "partial_detail_reviewed",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5p46f619sf1b7r1v9meotvo01f.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5p48nno14f5hp21l6sm0vc9i1l.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "EV-charging",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "pizza-app-ui",
@@ -107,7 +269,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5p3iu7u8bh3ln1j19o4m61f.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5p3mt8cb9k1cf93jt13761pjk1l.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "pizza-ordering",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "farm-app-ui",
@@ -119,7 +297,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5pgplihbvraie1mgm193k17fr1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5pl4j0312peda31inrp4q1usr28.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "farm-agriculture",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "sneaker-shopping-app-ui",
@@ -131,7 +325,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k6r5cb7t1gcthom1lhu1ohk8nd1a.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k6r5dvn61scmdrj13gh9sfh3r1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "sneaker-commerce",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "fitness-app-ui-kit",
@@ -143,7 +353,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k6qehj7a3db1em51h1k1mf371k1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k6qfptbr1poi198n14mo1a301io41s.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "fitness",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "fashion-app-ui",
@@ -155,7 +381,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5r56g1m19antlv1tl5139m13i41a.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5r5heqerjl1jt8gvk1slf9nu1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "fashion-commerce",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "fintech-app-ui-2",
@@ -167,7 +409,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5pf4au71lpjutt1t1di0l9h51m.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5pf5mug1arcs1j1k51r4cjjh1s.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "fintech",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "digital-wallet-app-ui",
@@ -179,7 +437,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k6365pqt1hi91smb117dfkp5sm1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k6369g9ageh17ll1olb1thg4s81m.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "digital-wallet",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "16.00",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "liquid-glass-effect",
@@ -191,7 +465,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k5pnog956ar17737h1clu1s7p1i.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k5pnog95dh5120clp3sme221h.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "liquid-glass-effects",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "8.88",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     },
     {
       "id": "lightning-app-ui-kit",
@@ -203,7 +493,23 @@
       "analysis_status": "listing_only",
       "screenshot_artifacts": [],
       "licence_status": "not_verified",
-      "reuse_policy": "reference_patterns_only_until_license_verified"
+      "reuse_policy": "reference_patterns_only_until_license_verified",
+      "preview_image_refs": [
+        {
+          "src": "o_1k6qc11jr3nl6f811bk1j4fo551a.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        },
+        {
+          "src": "o_1k6qcc585uh3nqhi910af1t0s1g.png",
+          "source_page": "https://payhip.com/DailyFlutterUI",
+          "status": "html_src_observed_pixels_not_captured"
+        }
+      ],
+      "product_domain": "general-app-ui",
+      "visual_analysis_status": "not_visually_inspected",
+      "observed_listing_price_usd": "8.88",
+      "analysis_notes": "Only listing title, price and storefront image element references observed; do not infer visual design or detailed functionality from category name."
     }
   ]
 }
