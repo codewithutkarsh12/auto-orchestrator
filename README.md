@@ -64,6 +64,10 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Main flow:
 4. `TokenOptimizer` trims context to the configured budget.
 5. `AutoOrchestrator` returns a structured result and execution trace.
 
+## GitDiagram MCP (optional)
+
+AUTO includes an optional Claude Code remote MCP configuration for GitDiagram. It can help map the architecture of **public** GitHub repositories. See [GITDIAGRAM_MCP.md](GITDIAGRAM_MCP.md) for setup, tool routing, and safety rules. The repository-root [.mcp.json](.mcp.json) registers the hosted service for compatible Claude Code sessions. This does not add a live MCP client to AUTO's Python runtime; that requires a separately implemented and tested adapter.
+
 ## Safety model
 
 - Skills are untrusted extensions; metadata is not proof of safety.
