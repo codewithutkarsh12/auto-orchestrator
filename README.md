@@ -125,3 +125,17 @@ python -m auto_orchestrator.cli /security-review .
 `/code-review` checks Python syntax and common hazards such as bare `except`, `eval`, `exec`, and empty function bodies. `-fix` currently changes only trailing whitespace and final-newline formatting; it does **not** rewrite logic or claim to repair detected bugs. Review the diff before committing.
 
 `/security-review` flags patterns including dynamic execution, `shell=True`, disabled TLS verification, hard-coded secret-like values, and unsafe pickle loading. These are heuristics: false positives and missed vulnerabilities are possible. For a stronger release gate, add dependency auditing, secret scanning, static analysis, and human review in CI.
+
+
+## UI/UX Reference Intelligence (feature branch)
+
+The `feat/ui-ux-reference-library` branch introduces the design for a reusable UI/UX reference subsystem supporting Flutter and Web projects.
+
+- [Reference engine architecture](docs/UI_UX_REFERENCE_ENGINE.md)
+- [Capture and evidence playbook](docs/UI_UX_CAPTURE_PLAYBOOK.md)
+- [DailyFlutterUI audit report](docs/reports/DAILYFLUTTERUI_VISUAL_AUDIT_2026-11-17.md)
+- [DailyFlutterUI source catalogue](references/ui-ux/catalog/dailyflutterui.json)
+- [UI reference analysis skill](skills/ui-reference-analysis/SKILL.md)
+- [UI reference implementation skill](skills/ui-reference-implementation/SKILL.md)
+
+**Current status:** discovery and metadata catalogue are documented. Screenshot capture, visual token extraction, runtime retrieval, and implementation adapters are not yet implemented. See the audit report for exact evidence coverage and limitations.
