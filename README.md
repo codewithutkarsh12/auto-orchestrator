@@ -139,3 +139,14 @@ The `feat/ui-ux-reference-library` branch introduces the design for a reusable U
 - [UI reference implementation skill](skills/ui-reference-implementation/SKILL.md)
 
 **Current status:** discovery and metadata catalogue are documented. Screenshot capture, visual token extraction, runtime retrieval, and implementation adapters are not yet implemented. See the audit report for exact evidence coverage and limitations.
+
+
+### Web UI reference sources
+
+The feature branch also indexes four web-focused component ecosystems:
+- [NeoBrutalism](https://neobrutalism.com/)
+- [SmoothUI](https://smoothui.dev/)
+- [Magic UI](https://magicui.design/)
+- [Unlumen UI](https://ui.unlumen.com/)
+
+See [web UI source catalogue](references/ui-ux/catalog/web-ui-libraries.json) and [initial metadata audit](docs/reports/WEB_UI_REFERENCE_SOURCES_2026-11-17.md). These are React/web references, not Flutter-ready kits. Screenshots and pixel-level review are pending Chrome access.
