@@ -156,3 +156,12 @@ Current evidence coverage:
 - E5 permitted source-code inspection: 0 products
 
 Do not mark this source visually verified or quality-certified until actual screenshot artifacts have been captured and inspected. Chat-mode browser text extraction is not screenshot capture.
+
+
+## Additional web UI source catalogue
+
+A separate catalogue was added at `references/ui-ux/catalog/web-ui-libraries.json` for four React/web-focused sources: NeoBrutalism, SmoothUI, Magic UI, and Unlumen UI. The metadata audit is in `docs/reports/WEB_UI_REFERENCE_SOURCES_2026-11-17.md`.
+
+Keep these records separate from Flutter template records. They are primarily React/Next.js and Tailwind sources; Flutter tasks may use their general design/interaction principles as inspiration but must implement Flutter-native components. The catalogue explicitly tracks free/Pro distinctions, platform, motion technology, evidence status, and approval-before-installation.
+
+These sources are currently metadata-reviewed only. Screenshot capture, pixel-level analysis, source review, licence clearance, and runtime integration remain pending.
