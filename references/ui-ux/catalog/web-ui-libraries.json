@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "collection": {
+    "id": "web-ui-libraries",
+    "title": "Web UI component and motion references",
+    "discovered_at": "2026-11-17",
+    "target_platforms": [
+      "web",
+      "react",
+      "nextjs"
+    ],
+    "intended_use": "Reference discovery and pattern analysis; never auto-install from catalogue.",
+    "screenshot_status": "pending_chrome_access",
+    "visual_analysis_status": "metadata_reviewed_not_visually_verified"
+  },
+  "sources": [
+    {
+      "id": "neobrutalism-com",
+      "name": "NeoBrutalism",
+      "url": "https://neobrutalism.com/",
+      "category": [
+        "design_system",
+        "component_registry",
+        "blocks",
+        "templates",
+        "mcp_enabled_reference"
+      ],
+      "platforms": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "primitive_backends": [
+        "Radix UI",
+        "Base UI",
+        "React Aria"
+      ],
+      "evidence_level": "web_metadata_reviewed",
+      "observed_claims": [
+        "Open-code React component library with shadcn CLI registry",
+        "50+ components advertised; component gallery lists 57",
+        "158+ ready-made blocks advertised on homepage",
+        "Blocks and templates; Figma kit and MCP server support advertised",
+        "Neo-brutalist style: thick borders, hard shadows, bold colors, heavy typography, tactile button interactions"
+      ],
+      "visual_audit_status": "pending_screenshot_capture",
+      "license_status": "verify_per_component_and_block_before_reuse",
+      "installation_policy": "approval_required",
+      "source_evidence_urls": [
+        "https://neobrutalism.com/",
+        "https://neobrutalism.com/components",
+        "https://neobrutalism.com/docs",
+        "https://neobrutalism.com/docs/installation"
+      ],
+      "risks": [
+        "Do not assume every block/template is free because free components are advertised.",
+        "Review the selected primitive backend and dependencies before installation.",
+        "Use the visual style selectively; evaluate readability and brand fit rather than applying it everywhere."
+      ]
+    },
+    {
+      "id": "smoothui-dev",
+      "name": "SmoothUI",
+      "url": "https://smoothui.dev/",
+      "category": [
+        "animated_component_library",
+        "motion_patterns"
+      ],
+      "platforms": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "animation_technologies": [
+        "Motion (formerly Framer Motion)",
+        "GSAP"
+      ],
+      "evidence_level": "web_metadata_reviewed",
+      "observed_claims": [
+        "Documentation advertises 181 animated React components",
+        "Examples include text effects, interactive cards, buttons, form inputs, notifications and dynamic island-style interactions",
+        "shadcn CLI-compatible installation is documented",
+        "Documentation describes reduced-motion support and transform/opacity-oriented animation practices"
+      ],
+      "visual_audit_status": "pending_screenshot_capture",
+      "license_status": "verify_per_component_before_reuse",
+      "installation_policy": "approval_required",
+      "source_evidence_urls": [
+        "https://smoothui.dev/",
+        "https://smoothui.dev/docs/components",
+        "https://smoothui.dev/docs/guides/animated-components"
+      ],
+      "risks": [
+        "Measure actual runtime performance rather than assuming marketing performance claims.",
+        "Check reduced-motion behaviour in live examples.",
+        "Avoid unnecessary animation and bundle weight."
+      ]
+    },
+    {
+      "id": "magicui-design",
+      "name": "Magic UI",
+      "url": "https://magicui.design/",
+      "category": [
+        "animated_component_library",
+        "landing_page_patterns",
+        "background_effects"
+      ],
+      "platforms": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "animation_technologies": [
+        "Motion"
+      ],
+      "evidence_level": "web_metadata_reviewed",
+      "observed_claims": [
+        "Public component documentation lists animated effects, text treatments, grids, cards, buttons, navigation and background patterns",
+        "Examples include Animated Beam, Bento Grid, Magic Card, Marquee, Meteors, Orbiting Circles, Shimmer Button, Safari and text animations",
+        "shadcn-style component ecosystem"
+      ],
+      "visual_audit_status": "pending_screenshot_capture",
+      "license_status": "verify_per_component_before_reuse",
+      "installation_policy": "approval_required",
+      "source_evidence_urls": [
+        "https://magicui.design/",
+        "https://magicui.design/docs/components"
+      ],
+      "risks": [
+        "Verify current package and component requirements from the live docs.",
+        "Review motion intensity, reduced-motion support and mobile performance.",
+        "Check whether a desired block/component is free or has separate access terms."
+      ]
+    },
+    {
+      "id": "unlumen-ui",
+      "name": "Unlumen UI",
+      "url": "https://ui.unlumen.com/",
+      "category": [
+        "animated_component_library",
+        "motion_patterns",
+        "image_effects",
+        "navigation_patterns"
+      ],
+      "platforms": [
+        "React",
+        "shadcn/ui",
+        "Tailwind CSS"
+      ],
+      "animation_technologies": [
+        "Motion",
+        "Canvas",
+        "WebGL"
+      ],
+      "evidence_level": "web_metadata_reviewed",
+      "observed_claims": [
+        "Animated React components and primitives designed for shadcn projects",
+        "Gallery categories include animations, image effects, marketing, navigation, backgrounds/shaders and icons",
+        "Gallery labels free and Pro components separately",
+        "Examples include hover cards, motion tabs, animated lists, cursor trails, docks, navbars, WebGL backgrounds and SVG icon transitions"
+      ],
+      "visual_audit_status": "pending_screenshot_capture",
+      "license_status": "verify_free_or_pro_and_component_terms_before_reuse",
+      "installation_policy": "approval_required",
+      "source_evidence_urls": [
+        "https://ui.unlumen.com/",
+        "https://ui.unlumen.com/components"
+      ],
+      "risks": [
+        "Clearly separate free and Pro components in the registry.",
+        "Check WebGL/canvas cost and fallback behaviour on low-powered devices.",
+        "Inspect keyboard and reduced-motion accessibility."
+      ]
+    }
+  ],
+  "cross_platform_policy": {
+    "flutter": "These four sources are primarily React/web references. Do not classify their components as Flutter-ready. Extract general UX and visual principles, then implement native Flutter equivalents only when the user task calls for Flutter.",
+    "web": "Inspect actual component source, framework version, dependencies, accessibility and responsive behaviour before selecting for React/Next.js.",
+    "retrieval": "Return 2–4 relevant references for a task; prefer matching platform, component role, interaction pattern, licence clarity and evidence confidence.",
+    "reuse": "Prefer general patterns and original implementation. Copy/install source only after checking the specific component's licence and receiving user approval."
+  },
+  "evidence_policy": {
+    "screenshots_captured": 0,
+    "chrome_access_expected_from_user": "tomorrow; date not yet confirmed",
+    "pixel_level_analysis": "not_started",
+    "source_code_review": "not_started",
+    "note": "Web metadata is a starting inventory, not a screenshot audit or licence clearance."
+  }
+}
