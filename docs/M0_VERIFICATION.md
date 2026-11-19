@@ -1,6 +1,6 @@
 # M0 verification evidence
 
-Status: M0 implementation and local checks passed; draft PR #4 open. Current Actions upgrade awaits CI verification.
+Status: M0 implementation and local checks passed; draft PR #4 open. Actions upgrades passed CI on Python 3.11–3.14.
 
 Base: `d7f9401` (latest fetched main on 2026-11-19).
 Branch: `feat/packaging-ci-baseline`.
@@ -53,4 +53,4 @@ The user explicitly approved pytest, setuptools, wheel and their four transitive
 
 ## Actions deprecation follow-up
 
-The action upgrades are limited to `actions/checkout@v5` and `actions/setup-python@v6`. Their official action metadata/documentation specify Node.js 24; setup-python v6 requires runner v2.327.1 or later. The `ubuntu-latest` GitHub-hosted runner will be proven compatible by the new CI run. The Python 3.11–3.14 matrix, read-only `contents: read` permission, and commands are unchanged. New run URL, job results and annotations will be recorded after CI.
+The action upgrades are limited to `actions/checkout@v5` and `actions/setup-python@v6`. Their official action metadata/documentation specify Node.js 24; setup-python v6 requires runner v2.327.1 or later. The `ubuntu-latest` GitHub-hosted runner will be proven compatible by the new CI run. The Python 3.11–3.14 matrix, read-only `contents: read` permission, and commands are unchanged. Follow-up run: https://github.com/codewithutkarsh12/auto-orchestrator/actions/runs/44582873061 — four successful jobs (Python 3.11, 3.12, 3.13 and 3.14); each recorded 5 focused tests and 16 full-suite tests passing, plus successful CLI smoke. Logs show runner version 2.338.2 and no Node.js 20 deprecation warnings. Remaining log warnings: setuptools `BuildBackendWarning` because `project.license` is a TOML table (three occurrences per job), plus a standard Git default-branch hint. The packaging metadata warning is outside this targeted Actions update and does not fail CI. No workflow annotations were reported for the Node.js 20 deprecation.
