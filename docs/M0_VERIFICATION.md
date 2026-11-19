@@ -1,6 +1,6 @@
 # M0 verification evidence
 
-Status: implementation prepared; installation/full-suite verification blocked.
+Status: M0 implementation and local checks passed; draft PR #4 open. Current Actions upgrade awaits CI verification.
 
 Base: `d7f9401` (latest fetched main on 2026-11-19).
 Branch: `feat/packaging-ci-baseline`.
@@ -28,17 +28,17 @@ Local Python: 3.12.14, Linux.
 - `python -m compileall -q src tests`: exit 0.
 - `git diff --check`: exit 0.
 
-## Remaining gate
+## Historical approval gate (resolved)
 
 Automatic approval review rejected installing pytest, setuptools and wheel because repository instructions require explicit package-install approval. No existing pytest installation was found in the default or system Python. Do not bypass this with CI installation before approval.
 
-After approval, install development/build dependencies inside .venv, verify editable install, run focused and full pytest, and repeat the install/CLI checks in a fresh clone. Open the draft PR and record actual CI results and URL. Windows remains unverified. No merge is authorized.
+Approval was later granted; see the verified results below. Windows remains unverified. No merge is authorized.
 
 No runtime algorithms were changed. No external skills, model APIs, paid services, or other feature branches are involved.
 
 ## Approved verification (2026-11-19, Python 3.12.14)
 
-The user explicitly approved pytest, setuptools, wheel and their four transitive dependencies for the isolated M0 environment and CI. The earlier remaining-gate text above documents the historical red phase, not the current state.
+The user explicitly approved pytest, setuptools, wheel and their four transitive dependencies for the isolated M0 environment and CI. The earlier approval-gate text above documents the historical red phase.
 
 - `.venv/bin/python -m pip install --index-url https://pypi.org/simple 'pytest>=8,<10' 'setuptools>=68' wheel`: exit 0; installed only pytest 9.2.0, setuptools 84.2.1, wheel 0.48.0, iniconfig 2.3.1, packaging 26.3, pluggy 1.7.0, pygments 2.21.0.
 - `.venv/bin/python -m pip install --no-deps --no-build-isolation -e .`: exit 0, built and installed editable auto-orchestrator 0.1.0.
@@ -49,4 +49,8 @@ The user explicitly approved pytest, setuptools, wheel and their four transitive
 - `.venv/bin/python -m auto_orchestrator.cli /security-review src/auto_orchestrator/cli.py`: exit 0; 0 heuristic findings.
 - Metadata inspection: exit 0; version 0.1.0, Python >=3.11, no required runtime dependencies, optional pytest dev extra.
 - `git diff main...HEAD --check`: exit 0; modules and existing tests moved without content change. Added packaging, docs, CI and CLI regression tests only. No credential pattern matched in changed content (heuristic scan, not a complete secret audit).
-- CI matrix configures 3.11, 3.12, 3.13, 3.14; only local 3.12.14 executed before PR. GitHub CI results will be checked after PR creation.
+- Initial CI run on draft PR #4: https://github.com/codewithutkarsh12/auto-orchestrator/actions/runs/44581660350 — all four jobs completed successfully on Python 3.11, 3.12, 3.13 and 3.14 (Linux). Local verification executed on Python 3.12.14. This initial run emitted four Node.js 20 deprecation annotations from checkout@v4 and setup-python@v5.
+
+## Actions deprecation follow-up
+
+The action upgrades are limited to `actions/checkout@v5` and `actions/setup-python@v6`. Their official action metadata/documentation specify Node.js 24; setup-python v6 requires runner v2.327.1 or later. The `ubuntu-latest` GitHub-hosted runner will be proven compatible by the new CI run. The Python 3.11–3.14 matrix, read-only `contents: read` permission, and commands are unchanged. New run URL, job results and annotations will be recorded after CI.
