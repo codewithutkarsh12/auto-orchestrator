@@ -17,7 +17,7 @@ This repository is an early-stage Python reference implementation. Read `README.
 - Prefer stdlib Python and SQLite, small interfaces, readable code and 3.11+ compatibility.
 - Observe actual repository structure, not only README claims.
 - Use tests-first (red → green → refactor) for behavior changes. Verify changed components and run full suite before claiming done.
-- On the current main branch, packaging and docs are not aligned; first implement the M0 baseline in an independent PR. Do not claim `pip install -e .` works until it has actually succeeded.
+- Keep packaging and docs aligned; validate M0 changes in an independent PR. Do not claim `pip install -e .` works until it has actually succeeded.
 - Be explicit about whether a result is: proposed, implemented, locally tested, CI verified, or merged.
 - Default to deterministic offline execution, permission-denied behavior, and sequential specialist passes. Real multi-agent, hosted-model, or MCP integration requires evidence.
 - Keep model adapters optional and separate from the core. No bills in CI.
