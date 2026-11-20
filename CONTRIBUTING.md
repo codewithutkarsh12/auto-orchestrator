@@ -14,15 +14,13 @@ Thanks for helping make AUTO safer and more useful! 🎉
 python -m venv .venv
 # Activate the environment, then:
 python -m pip install -e ".[dev]"
-pytest
-ruff check .
+python -m pytest
 ```
 
 ## Pull request checklist
 
 - [ ] Tests added or updated
-- [ ] `pytest` passes
-- [ ] `ruff check .` passes
+- [ ] `python -m pytest` passes
 - [ ] Docs and examples updated where needed
 - [ ] New permissions and external effects are documented
 - [ ] No credentials, personal data, or private user content included
@@ -30,7 +28,7 @@ ruff check .
 
 ## Adding a skill
 
-Prefer declarative metadata under `skills/` first. Include a unique name, version,
+Register local `Skill` metadata explicitly; no external skill catalog or installer is shipped yet. Include a unique name, version,
 description, capabilities, dependencies, permissions, risk level, and input/output
 contract. Do not add arbitrary code execution to the core registry.
 

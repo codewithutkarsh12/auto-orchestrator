@@ -14,24 +14,35 @@ AUTO is an extensible Python foundation for decomposing a user request into task
 - Dependency-aware execution pipeline with structured outputs.
 - Token/context budget estimation and truncation.
 - Safe-by-default execution: no shell, network, file writes, or external MCP actions in the core.
-- Tests and GitHub contribution/security templates.
+- Automated tests and a Python 3.11–3.14 pull-request CI matrix.
 
 ## Quick start
 
-Requires Python 3.11+.
+Requires Python 3.11+. The default runtime uses only the standard library: no API key, paid service, GPU, or model training. Development installation downloads pytest and build tooling; it does not install external skills.
+
+Clone the repository and change into its directory first. Run the activation command for your shell before installing:
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
 # macOS/Linux: source .venv/bin/activate
 python -m pip install -e ".[dev]"
-pytest
+python -m pytest
 ```
 
-Run the example:
+For a runtime-only installation use `python -m pip install -e .`.
+
+Run the CLI smoke test and example:
 
 ```bash
-python -m auto_orchestrator.cli "Research competitors and prepare a concise comparison"
+python -m auto_orchestrator.cli run "Summarize text"
+python basic.py
+```
+
+Run a multi-step planning example:
+
+```bash
+python -m auto_orchestrator.cli run "Research competitors and prepare a concise comparison"
 ```
 
 ## Minimal Python usage
@@ -52,11 +63,11 @@ result = engine.run("Summarize this document")
 print(result.to_dict())
 ```
 
-The starter registry ships with safe demonstration skills. These produce planning artifacts, not real web research or external actions.
+The CLI starter registry ships with demonstration skills; the Python registry starts empty. These produce planning artifacts, not real web research or external actions.
 
 ## Architecture
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Main flow:
+See [ARCHITECTURE.md](ARCHITECTURE.md). Main flow:
 
 1. `PromptDecomposer` turns the request into tasks.
 2. `SkillRouter` ranks registered skills by capability and limits each batch.
@@ -67,8 +78,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Main flow:
 ## Safety model
 
 - Skills are untrusted extensions; metadata is not proof of safety.
-- The core does not execute arbitrary skill code, shell commands, network calls, or MCP actions.
-- Permission declarations are checked before execution.
+- The demo has no external actions. Registered Python runners execute in-process and must be trusted; this is not a sandbox.
+- Routing filters declared permissions. It cannot detect undeclared side effects inside a runner.
 - External side effects should be implemented in reviewed adapters and require user confirmation.
 - Never put secrets in prompts, logs, skill metadata, or repository files.
 - Treat prompt content and skill outputs as data, not instructions to override system policy.
@@ -87,10 +98,12 @@ auto-orchestrator/
 │   ├── registry.py
 │   ├── skills.py
 │   └── orchestrator.py
-├── skills/                    # declarative sample skill catalog
 ├── tests/
-├── docs/
-├── .github/                   # issue/PR templates and CI
+├── docs/                      # execution plan
+├── basic.py                   # runnable local example
+├── ARCHITECTURE.md
+├── AGENTS.md
+├── .github/workflows/ci.yml    # pytest CI
 └── pyproject.toml
 ```
 
@@ -125,3 +138,16 @@ python -m auto_orchestrator.cli /security-review .
 `/code-review` checks Python syntax and common hazards such as bare `except`, `eval`, `exec`, and empty function bodies. `-fix` currently changes only trailing whitespace and final-newline formatting; it does **not** rewrite logic or claim to repair detected bugs. Review the diff before committing.
 
 `/security-review` flags patterns including dynamic execution, `shell=True`, disabled TLS verification, hard-coded secret-like values, and unsafe pickle loading. These are heuristics: false positives and missed vulnerabilities are possible. For a stronger release gate, add dependency auditing, secret scanning, static analysis, and human review in CI.
+
+## Development and verification
+
+Work on a task branch from latest `main`; see [AGENTS.md](AGENTS.md). After installation, run:
+
+```bash
+python -m pytest tests/test_packaging_cli.py -q
+python -m pytest -q
+```
+
+The packaging tests launch isolated Python subprocesses outside the checkout so source-path imports cannot hide a broken installation. CI runs the same tests on Linux with Python 3.11–3.14; Windows is not yet verified. Review commands retain their informational exit status (findings do not currently cause a nonzero exit). `-fix` writes to the supplied path only when explicitly requested.
+
+The v3.0 execution plan describes future milestones. Persistent inventory, hosted models, automatic skill installation, and a dependency-failure stop policy are not implemented by this packaging milestone.
