@@ -39,10 +39,19 @@ class ExecutionPipeline:
     def execute(self, tasks: list[Task]) -> tuple[list[TaskExecution], dict[str, str]]:
         context: dict[str, str] = {}
         executions: list[TaskExecution] = []
+        status_by_id: dict[str, str] = {}
         for task in self.order(tasks):
+            blocked = [dep for dep in task.depends_on if status_by_id[dep] != "success"]
+            if blocked:
+                reason = ", ".join(f"{dep} ({status_by_id[dep]})" for dep in blocked)
+                executions.append(TaskExecution(task.id, None, "skipped",
+                                                error=f"Blocked by prerequisite(s): {reason}"))
+                status_by_id[task.id] = "skipped"
+                continue
             matches = self.router.route(task)
             if not matches:
                 executions.append(TaskExecution(task.id, None, "skipped", error="No eligible skill"))
+                status_by_id[task.id] = "skipped"
                 continue
             skill = self.registry.get(matches[0].skill_name)
             assert skill is not None
@@ -54,6 +63,8 @@ class ExecutionPipeline:
                 context = self.optimizer.trim(context)
                 executions.append(TaskExecution(task.id, skill.name, "success", output,
                                              estimated_tokens=self.optimizer.estimate_tokens(output)))
+                status_by_id[task.id] = "success"
             except Exception as exc:  # isolate a skill failure from the rest of the workflow
                 executions.append(TaskExecution(task.id, skill.name, "failed", error=str(exc)))
+                status_by_id[task.id] = "failed"
         return executions, context
